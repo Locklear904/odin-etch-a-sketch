@@ -5,6 +5,9 @@ function createGrid(size) {
         let square = document.createElement('div');
         square.classList.add('gridSquare');
         grid.appendChild(square);
+        square.addEventListener("mouseover", function() {
+            square.style.backgroundColor = "black";
+        })
     }
 }
 
