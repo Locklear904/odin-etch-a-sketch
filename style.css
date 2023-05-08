@@ -1,10 +1,20 @@
 #sketchContainer {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     width: 700px;
     height: 700px;
 }
 
-.gridSquare {
-    width: 25%;
+.gridColumn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.gridBox {
+    flex: 1;
+}
+
+.gridBox:hover {
+    background-color: black;
 }
