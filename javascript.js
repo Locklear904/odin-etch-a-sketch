@@ -14,6 +14,10 @@ function newGrid() {
     }
 }
 
+/*function subtractLight(level) {
+    box.style.backgroundColor = "hsl(0, 100%, (100 - level)%)"
+}*/
+
 function createGrid(size) {
     for (let i = 0; i < size; i++) {
         let column = document.createElement('div');
@@ -23,10 +27,13 @@ function createGrid(size) {
             let box = document.createElement('div');
             box.classList.add('gridBox');
             column.appendChild(box);
-            //Using CSS hover, but saving event listener just in case
-            /*box.addEventListener("onmouseover", function() {
-                box.style.backgroundColor = "black";
-            });*/
+            box.style.backgroundColor = "black";
+            box.style.opacity = "0.0";
+            box.addEventListener("mouseover", function(e) {
+                if (parseFloat(e.target.style.opacity) < 1.0) {
+                    e.target.style.opacity = parseFloat(e.target.style.opacity) + 0.1;
+                }
+            });
         }
     }
 }
